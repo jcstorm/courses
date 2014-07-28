@@ -1,0 +1,19 @@
+<h1>Student Name: <%= @student.name %></h1>
+
+<div>
+  <h2>Student ID: <%= @student.id %></h2>
+</div>
+<div>
+  <strong>Email</strong>:<br />
+  <p><%= @student.email %></p>
+</div>
+
+<div>Enrolled in these courses:</div>
+  <ul>
+    <% @student.enrollments.each do |enrollment| %>
+    <li><%= enrollment.course.name %>
+    <% end %>
+  </ul>
+
+<a href="/students/<%= @student.id %>/edit">Edit</a> |
+<a href="/students/<%= @student.id %>/destroy">Destroy</a>
