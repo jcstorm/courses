@@ -4,8 +4,8 @@
   <div>
     <label for="course_id">Course</label><br />
      <select name="course_id">
-       <% @enrollments.each do |enrollment| %>
-       <option  value="<%= enrollment.course.try(:id) %>"><%= enrollment.course.try(:id) %> <%= enrollment.course.try(:name) %></option>
+       <% Course.all.each do |course| %>
+       <option  value="<%= course.id %>"><%= course.id %> <%= course.name %></option>
       <% end %>
     </select>
   </div>
@@ -13,8 +13,8 @@
   <div>
     <label for="student_id">Student</label><br />
     <select name="student_id">
-      <% @enrollments.each do |enrollment| %>
-      <option value="<%= enrollment.student.try(:id) %>"><%= enrollment.student.try(:id) %> <%= enrollment.student.try(:name) %></option>
+      <% Student.all.each do |student| %>
+      <option value="<%= student.id %>"><%= student.id %> <%= student.name %></option>
       <% end %>
     </select>
 
