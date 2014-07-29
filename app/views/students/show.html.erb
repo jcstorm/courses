@@ -1,19 +1,22 @@
-<h1>Student Name: <%= @student.name %></h1>
+<h1>Student</h1>
 
-<div>
-  <h2>Student ID: <%= @student.id %></h2>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @student.name %></h3>
+  </div>
+  <div class="panel-body">
+    <ul>
+      <li><strong>Student ID:</strong> <%= @student.id %></li>
+      <li><strong>Student Email:</strong> <%= @student.email %></li>
+      <li><strong>Enrolled in these courses:</strong>
+        <ul>
+          <% @student.enrollments.each do |enrollment| %>
+            <li><%= enrollment.course.try(:name) %>
+          <% end %>
+        </ul>
+    </ul>
+  </div>
 </div>
-<div>
-  <strong>Email</strong>:<br />
-  <p><%= @student.email %></p>
-</div>
-
-<div>Enrolled in these courses:</div>
-  <ul>
-    <% @student.enrollments.each do |enrollment| %>
-    <li><%= enrollment.course.name %>
-    <% end %>
-  </ul>
 
 <a href="/students/<%= @student.id %>/edit">Edit</a> |
 <a href="/students/<%= @student.id %>/destroy">Destroy</a>

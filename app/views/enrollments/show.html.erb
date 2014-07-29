@@ -2,11 +2,11 @@
 
 <div>
   <strong>Course</strong>:<br />
-  <p><%= @enrollment.course_id %></p>
+  <p><%= @enrollment.try(:course_id) %> <%= @enrollment.course.try(:name) %></p>
 </div>
 <div>
   <strong>Student</strong>:<br />
-  <p><%= @enrollment.student_id %></p>
+  <p><%= @enrollment.try(:student_id) %> <%= @enrollment.student.try(:name) %></p>
 </div>
 
 <a href="/enrollments/<%= @enrollment.id %>/edit">Edit</a> |

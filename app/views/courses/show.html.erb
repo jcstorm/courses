@@ -1,16 +1,21 @@
-<h1>Course Name: <%= @course.name %></h1>
+<h1>Course</h1>
 
-<div>
-  <h2>Course Number: <%= @course.id %></h2>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @course.name %></h3>
+  </div>
+  <div class="panel-body">
+    <ul>
+      <li><strong>Course ID:</strong> <%= @course.id %></li>
+      <li><strong>Students Enrolled in this course:</strong>
+        <ul>
+          <% @course.enrollments.each do |enrollment| %>
+          <li><%= enrollment.student.name %>
+          <% end %>
+        </ul>
+    </ul>
+  </div>
 </div>
-<div><strong>Students enrolled in this course:</strong></div>
-  <ul>
-    <% @course.enrollments.each do |enrollment| %>
-    <li> <%= enrollment.student.name %>
-    
-    <% end %>
-    
-</ul>
-  
+
 <a href="/courses/<%= @course.id %>/edit">Edit</a> |
 <a href="/courses/<%= @course.id %>/destroy">Destroy</a>

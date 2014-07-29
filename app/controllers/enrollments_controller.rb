@@ -9,6 +9,8 @@ class EnrollmentsController < ApplicationController
   end
 
   def new
+    @enrollments = Enrollment.all
+
   end
 
   def create
