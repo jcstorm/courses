@@ -18,10 +18,10 @@
     <tr>
       <td><%= enrollment.course_id %> </td>
       <td><%= enrollment.student_id %> <%= enrollment.student.try(:name) %></td>
-          <td><a href="/enrollments/<%= enrollment.id %>">Show | </a>
+          <td><a href="/enrollments/<%= enrollment.id %>">&nbsp; Show&nbsp;</a> |
         </td>
-      <td><a href="/enrollments/<%= enrollment.id %>/edit"> Edit | </a></td>
-      <td><a href="/enrollments/<%= enrollment.id %>/destroy">Destroy</a></td>
+      <td><a href="/enrollments/<%= enrollment.id %>/edit">&nbsp; Edit&nbsp;</a> |</td>
+      <td><a href="/enrollments/<%= enrollment.id %>/destroy">&nbsp; Destroy</a></td>
     </tr>
   <% end %>
   </tbody>

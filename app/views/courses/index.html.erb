@@ -16,9 +16,9 @@
   <% @courses.each do |course| %>
     <tr>
           <td><%= course.name %></td>
-          <td><a href="/courses/<%= course.id %>">&nbsp; Show |</a>
+          <td><a href="/courses/<%= course.id %>">&nbsp; Show&nbsp;</a> |
         </td>
-      <td><a href="/courses/<%= course.id %>/edit">&nbsp; Edit |</a></td>
+      <td><a href="/courses/<%= course.id %>/edit">&nbsp; Edit&nbsp;</a> |</td>
       <td><a href="/courses/<%= course.id %>/destroy">&nbsp; Destroy</a></td>
     </tr>
   <% end %>
